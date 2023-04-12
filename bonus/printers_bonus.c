@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:07:40 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 13:13:23 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:49:15 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,29 @@ int iput_nbr(int nb)
     i--;
     while (i >= 0)
         count += iput_char(tab[i--]);
+    return (count);
+}
+
+int iput_unsigned(unsigned int nb)
+{
+	unsigned int    i;
+	int		        count;
+	char	        tab[16];
+
+	if (nb == 0)
+		return (iput_char('0'));
+	count = 0;
+	i = 0;
+    while (nb > 0)
+    {
+        tab[i++] = nb % 10 + '0';
+        nb /= 10;
+    }
+    tab[i] = '\0';
+    i--;
+    while (i > 0)
+        count += iput_char(tab[i--]);
+    count += iput_char(tab[i]);
     return (count);
 }
 

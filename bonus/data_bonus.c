@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:46:22 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 15:21:23 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:53:17 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,12 @@ void    arg_is_number(t_printf *pf)
            || pf->conversion == 'u')
    {
        pf->u_arg = va_arg(pf->ap, unsigned int); 
+       //printf("arg is %u\n", pf->u_arg);
        if (pf->conversion == 'u')
-           pf->arg_len = nb_len(pf->u_arg);
+           pf->arg_len = u_nb_len(pf->u_arg);
        else
            pf->arg_len = hexa_len(pf->u_arg, HEXALOW);
+     //  printf("arglen is %d\n", pf->arg_len);
    }
     
 }

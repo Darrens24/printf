@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:11:35 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 13:16:35 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:48:26 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void                arg_is_number(t_printf *pf);
 int                 iput_char(char c);
 int                 iput_str(char *str);
 int                 iput_nbr(int nb);
+int                 iput_unsigned(unsigned int nb);
 int                 iput_hexa_base(size_t nb, char *base);
 
 /***        LIBFT       ***/

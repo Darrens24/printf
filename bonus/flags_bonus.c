@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 15:30:06 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 15:19:43 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:50:48 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ void    minus_left(t_printf *pf)
             pf->result[pf->i++] = '0';
     }
     pf->result[pf->i] = '\0';
-    pf->count += iput_str(pf->result);
+    if (pf->result[0] != '\0')
+        pf->count += iput_str(pf->result);
    // printf("result=%s\n", pf->result);
 }
 
@@ -109,7 +110,10 @@ void    put_arg(t_printf *pf)
     else if (pf->conversion == 'X')
         pf->count += iput_hexa_base(pf->u_arg, HEXAUP);
     else if (pf->conversion == 'u')
-        pf->count += iput_hexa_base(pf->u_arg, DECIMAL);
+    {
+       // printf("arg is %u\n", pf->u_arg);
+        pf->count += iput_unsigned(pf->u_arg);
+    }
     else if (pf->conversion == 'p')
     {
         pf->count += iput_str("0x");
@@ -128,8 +132,6 @@ void    put_right_flags(t_printf *pf)
     int i;
 
     i = pf->arg_len + ft_strlen(pf->result);
-    printf("arglen is %d\n", pf->arg_len);
-    printf("i for right flags is %d\n", i);
     //printf("result len is %d\n", i);
     //printf("field is %d\n", pf->field);
     while (i < pf->field)

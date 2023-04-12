@@ -2,6 +2,6 @@
 
 int	main()
 {
-    printf("real:%-2i\n", -1);
-    ft_printf("mine:%-2i\n", -1);
+    printf("real:%-4u\n", -11);
+    ft_printf("mine:%-4u\n", -11);
 }
