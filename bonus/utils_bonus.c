@@ -6,9 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:48:58 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/02 15:18:00 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/11 11:09:57 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "./ft_printf.h"
 
 int nb_len(int nb)
 {
@@ -30,7 +32,7 @@ int nb_len(int nb)
     return (len);
 }
 
-int u_nb_len(unsigned int nb);
+int u_nb_len(unsigned int nb)
 {
     int len;
 
@@ -50,13 +52,13 @@ int hexa_len(size_t nb, char *base)
 	size_t  i;
 	char	tab[16];
 
-	if (nbr == 0)
+	if (nb == 0)
 		return (1);
 	i = 0;
-    while (nbr > 0)
+    while (nb > 0)
     {
-        tab[i++] = base[nbr % 16];
-        nbr /= 16;
+        tab[i++] = base[nb % 16];
+        nb /= 16;
     }
     tab[i] = '\0';
     return ((int)ft_strlen(tab));

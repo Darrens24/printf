@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:46:22 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/02 15:31:51 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 10:25:39 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus/ft_printf.h"
+#include "./ft_printf.h"
 
 void    initialize_variables(t_printf *pf)
 {
@@ -28,6 +28,8 @@ void    initialize_variables(t_printf *pf)
     pf->field = 0;
     pf->precision = 0;
     pf->result = NULL;
+    pf->i = 0;
+    pf->conversion = 0;
 }
 
 void    get_flags(t_printf *pf, int i)
@@ -36,7 +38,7 @@ void    get_flags(t_printf *pf, int i)
     {
         if (ft_isdigit(pf->string[i]) && pf->string[i] != '0')
         {
-            pf->field = ft_atoi(pf->string + i + 1);
+            pf->field = ft_atoi(pf->string + i);
             i = go_to_next_flag(pf, i);
         }
         else if (pf->string[i] == '-')
@@ -69,7 +71,6 @@ void    arg_is_number(t_printf *pf)
    else if (pf->conversion == 'd' || pf->conversion == 'i')
    {
        pf->i_arg = va_arg(pf->ap, int);
-       pf->conversion = 'c';
        pf->arg_len = nb_len(pf->i_arg);
    }
    else if (pf->conversion == 'X' || pf->conversion == 'x'
@@ -99,25 +100,35 @@ void    get_args_and_conv(t_printf *pf, int i)
        pf->s_arg = va_arg(pf->ap, char *); 
        pf->arg_len = ft_strlen(pf->s_arg);
    }
-   else
+   else if (pf->conversion != 'd' && pf->conversion != 'u'
+           && pf->conversion != 'x' && pf->conversion != 'X'
+           && pf->conversion != 'p')
+   {
+       pf->c_arg = pf->string[i];
        pf->arg_len = 1;
+   }
 }
 
-int put_string_to_return(t_printf *pf)
+void    put_string_to_return(t_printf *pf)
 {
-    pf->result = malloc(sizeof(char) * (pf->field + pf->precision + pf->arglen + 1));
+    pf->result = malloc(sizeof(char) * (pf->field + pf->precision + pf->arg_len + 1)); // A FREE
     put_left_flags(pf);
     put_arg(pf);
-    put_right_flag(pf);
+    if (pf->minus)
+        put_right_flags(pf);
+    /*
     if (pf->precision)
     {
         if (pf->arg_len >= pf->precision && pf->arg_len >= pf->field)
             do_stuff_malloc_arglen;
+        else if (pf->arg_len >= pf->precision && pf->arg_len < pf->field)
+            put_field;
     }
     else if (pf->precision >= pf->field)
         do_stuff_malloc_pre;
     else if (pf->arg_len < pf->precision && pf->arg_len >= pf->field)
         do_stuff;
+        */
 }
 
 int go_to_next_flag(t_printf *pf, int i)

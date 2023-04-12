@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 15:41:48 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/02 11:15:42 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 12:55:08 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_putnbr_base_fd(long nbr, char *base, int fd)
     tab[i] = '\0';
     i--;
     while (i >= 0)
-        count += ft_putchar_fd(tab[i--], fd);
-	return (count);
+        count += ft_intputchar_fd(tab[i--], fd);
+    return (count);
 }

@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:20:24 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/02 11:24:24 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/11 11:04:29 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus/ft_printf.h"
+#include "./ft_printf.h"
 
 size_t  ft_strlen(const char *str)
 {
@@ -18,7 +18,7 @@ size_t  ft_strlen(const char *str)
 
     if (!str)
         return (0);
-	i = 0;
+    i = 0;
 	while (str && str[i])
 		i++;
 	return (i);

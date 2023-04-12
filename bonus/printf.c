@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:25:25 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/02 13:37:41 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/11 11:00:38 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus/ft_printf.h"
+#include "./ft_printf.h"
 
 int ft_printf(const char *arg, ...)
 {
@@ -30,7 +30,7 @@ int ft_printf(const char *arg, ...)
             initialize_variables(pf);
             get_flags(pf, i);
             get_args_and_conv(pf, i);
-            pf->count += put_string_to_return(pf);
+            put_string_to_return(pf);
             i = go_to_arg_end(pf, i);
         }
         else
