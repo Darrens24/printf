@@ -6,16 +6,17 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:25:25 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/11 11:00:38 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 13:26:56 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 int ft_printf(const char *arg, ...)
 {
     t_printf    *pf;
     int         i;
+    int         count;
 
     pf = malloc(sizeof(t_printf));
     va_start(pf->ap, arg);
@@ -38,7 +39,9 @@ int ft_printf(const char *arg, ...)
         i++;
     }
     va_end(pf->ap);
-    return (pf->count);
+    count = pf->count;
+    free(pf);
+    return (count);
 }
 
 

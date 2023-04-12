@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 15:30:06 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 10:48:56 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:19:43 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 /*
     - minus(all, surcharge zero)
     - plus (signe, surcharge espace)
@@ -128,6 +128,8 @@ void    put_right_flags(t_printf *pf)
     int i;
 
     i = pf->arg_len + ft_strlen(pf->result);
+    printf("arglen is %d\n", pf->arg_len);
+    printf("i for right flags is %d\n", i);
     //printf("result len is %d\n", i);
     //printf("field is %d\n", pf->field);
     while (i < pf->field)

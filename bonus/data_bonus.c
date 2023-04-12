@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:46:22 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 10:25:39 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 15:21:23 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 void    initialize_variables(t_printf *pf)
 {
@@ -103,10 +103,7 @@ void    get_args_and_conv(t_printf *pf, int i)
    else if (pf->conversion != 'd' && pf->conversion != 'u'
            && pf->conversion != 'x' && pf->conversion != 'X'
            && pf->conversion != 'p')
-   {
        pf->c_arg = pf->string[i];
-       pf->arg_len = 1;
-   }
 }
 
 void    put_string_to_return(t_printf *pf)
@@ -116,6 +113,7 @@ void    put_string_to_return(t_printf *pf)
     put_arg(pf);
     if (pf->minus)
         put_right_flags(pf);
+    free(pf->result);
     /*
     if (pf->precision)
     {

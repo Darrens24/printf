@@ -6,7 +6,7 @@
 #    By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 17:50:06 by eleleux           #+#    #+#              #
-#    Updated: 2023/04/12 13:02:58 by eleleux          ###   ########.fr        #
+#    Updated: 2023/04/12 13:19:06 by eleleux          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRC = ft_printf.c \
 
 SRCBONUS = ./bonus/data_bonus.c \
 			./bonus/flags_bonus.c \
-			./bonus/ft_printf.h \
 			./bonus/libft_bonus.c \
 			./bonus/parsing_bonus.c \
 			./bonus/printers_bonus.c \

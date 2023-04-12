@@ -1,7 +1,7 @@
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 int	main()
 {
-    printf("real:%05x\n", 42);
-    ft_printf("mine:%05x\n", 42);
+    printf("real:%-2i\n", -1);
+    ft_printf("mine:%-2i\n", -1);
 }

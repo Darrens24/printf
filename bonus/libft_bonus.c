@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:20:24 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/11 11:04:29 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 13:13:01 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 size_t  ft_strlen(const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:48:58 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/11 11:09:57 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/12 13:13:37 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 int nb_len(int nb)
 {
