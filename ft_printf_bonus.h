@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:11:35 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 15:48:26 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/18 19:14:30 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,28 @@
 
 typedef struct  s_printf
 {
-    va_list         ap;
-    char            *string;
-    int             i;
-    int             i_arg;
-    unsigned int    u_arg;
-    void            *p_arg;
-    char            c_arg;
-    char            *s_arg;
-    int             arg_len;
-    int             minus;
-    int             space;
-    int             dot;
-    int             zero;
-    int             plus;
-    int             hashtag;
-    char            conversion;
-    int             field;
-    int             precision;
-    char            *result;
-    int             count;
+	va_list         ap;
+	char            *string;
+	int             i;
+	int             i_arg;
+	unsigned int    u_arg;
+	void            *p_arg;
+	char            c_arg;
+	char            *s_arg;
+	int             arg_len;
+	int             minus;
+	int             space;
+	int             dot;
+	int             zero;
+	int             plus;
+	int				negative;
+	int             hashtag;
+	int				nothing;
+	char            conversion;
+	int             field;
+	int             precision;
+	char            *result;
+	int             count;
 }               t_printf;
 
 /***        PRINTF       ***/
@@ -72,6 +74,7 @@ void                initialize_variables(t_printf *pf);
 void                get_flags(t_printf *pf, int i);
 void                get_args_and_conv(t_printf *pf, int i);
 void                arg_is_number(t_printf *pf);
+int					print_untill_precision(t_printf *pf);
 
 /***        PRINTERS       ***/
 

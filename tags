@@ -1,0 +1,87 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC = gcc$/;"	m
+CC	bonus/Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CFLAGS	bonus/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+DECIMAL	ft_printf.h	/^# define DECIMAL /;"	d
+DECIMAL	ft_printf_bonus.h	/^# define DECIMAL /;"	d
+FALSE	ft_printf_bonus.h	/^# define FALSE /;"	d
+FT_PRINTF_BONUS_H	ft_printf_bonus.h	/^# define FT_PRINTF_BONUS_H$/;"	d
+FT_PRINTF_H	ft_printf.h	/^# define FT_PRINTF_H$/;"	d
+HEXALOW	ft_printf.h	/^# define HEXALOW /;"	d
+HEXALOW	ft_printf_bonus.h	/^# define HEXALOW /;"	d
+HEXAUP	ft_printf.h	/^# define HEXAUP /;"	d
+HEXAUP	ft_printf_bonus.h	/^# define HEXAUP /;"	d
+NAME	Makefile	/^NAME = libftprintf.a$/;"	m
+NAME	bonus/Makefile	/^NAME = printf$/;"	m
+OBJ	Makefile	/^	OBJ = $(OBJBONUS)$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	bonus/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJBONUS	Makefile	/^OBJBONUS = $(SRCBONUS:.c=.o)$/;"	m
+SRC	Makefile	/^SRC = ft_printf.c \\$/;"	m
+SRC	bonus/Makefile	/^SRC = printf.c \\$/;"	m
+SRCBONUS	Makefile	/^SRCBONUS = .\/bonus\/data_bonus.c \\$/;"	m
+TRUE	ft_printf_bonus.h	/^# define TRUE /;"	d
+ap	ft_printf_bonus.h	/^    va_list         ap;$/;"	m	struct:s_printf
+arg_is_number	bonus/data_bonus.c	/^void    arg_is_number(t_printf *pf)$/;"	f
+arg_len	ft_printf_bonus.h	/^    int             arg_len;$/;"	m	struct:s_printf
+c_arg	ft_printf_bonus.h	/^    char            c_arg;$/;"	m	struct:s_printf
+conversion	ft_printf_bonus.h	/^    char            conversion;$/;"	m	struct:s_printf
+count	ft_printf_bonus.h	/^    int             count;$/;"	m	struct:s_printf
+dot	ft_printf_bonus.h	/^    int             dot;$/;"	m	struct:s_printf
+field	ft_printf_bonus.h	/^    int             field;$/;"	m	struct:s_printf
+ft_atoi	bonus/libft_bonus.c	/^int ft_atoi(const char *str)$/;"	f
+ft_intputchar_fd	ft_putchar_fd.c	/^int	ft_intputchar_fd(char c, int fd)$/;"	f
+ft_intputstr_fd	ft_putstr_fd.c	/^int	ft_intputstr_fd(char *s, int fd)$/;"	f
+ft_isdigit	bonus/libft_bonus.c	/^int	ft_isdigit(int c)$/;"	f
+ft_printf	bonus/printf.c	/^int ft_printf(const char *arg, ...)$/;"	f
+ft_printf	ft_printf.c	/^int	ft_printf(const char *param, ...)$/;"	f
+ft_putarg	ft_printf.c	/^static int	ft_putarg(char c, va_list ap)$/;"	f	file:
+ft_putnbr_base_fd	ft_putnbr_base_fd.c	/^int	ft_putnbr_base_fd(int nbr, char *base, int fd)$/;"	f
+ft_sizebase_fd	ft_sizebase_fd.c	/^int	ft_sizebase_fd(size_t nbr, char *base, int fd)$/;"	f
+ft_strlen	bonus/libft_bonus.c	/^size_t  ft_strlen(const char *str)$/;"	f
+ft_strlen	ft_strlen.c	/^size_t	ft_strlen(const char *str)$/;"	f
+get_args_and_conv	bonus/data_bonus.c	/^void    get_args_and_conv(t_printf *pf, int i)$/;"	f
+get_flags	bonus/data_bonus.c	/^void    get_flags(t_printf *pf, int i)$/;"	f
+go_to_arg_end	bonus/data_bonus.c	/^int go_to_arg_end(t_printf *pf, int i)$/;"	f
+go_to_next_arg	bonus/utils_bonus.c	/^int go_to_next_arg(t_printf *pf, int i)$/;"	f
+go_to_next_flag	bonus/data_bonus.c	/^int go_to_next_flag(t_printf *pf, int i)$/;"	f
+hashtag	ft_printf_bonus.h	/^    int             hashtag;$/;"	m	struct:s_printf
+hexa_len	bonus/utils_bonus.c	/^int hexa_len(size_t nb, char *base)$/;"	f
+i	ft_printf_bonus.h	/^    int             i;$/;"	m	struct:s_printf
+i_arg	ft_printf_bonus.h	/^    int             i_arg;$/;"	m	struct:s_printf
+initialize_variables	bonus/data_bonus.c	/^void    initialize_variables(t_printf *pf)$/;"	f
+iput_char	bonus/printers_bonus.c	/^int iput_char(char c)$/;"	f
+iput_hexa_base	bonus/printers_bonus.c	/^int iput_hexa_base(size_t nb, char *base)$/;"	f
+iput_nbr	bonus/printers_bonus.c	/^int iput_nbr(int nb)$/;"	f
+iput_str	bonus/printers_bonus.c	/^int iput_str(char *str)$/;"	f
+iput_unsigned	bonus/printers_bonus.c	/^int iput_unsigned(unsigned int nb)$/;"	f
+is_conversion	bonus/utils_bonus.c	/^int is_conversion(char c)$/;"	f
+is_flag	bonus/utils_bonus.c	/^int is_flag(char c)$/;"	f
+main	bonus/main.c	/^int	main()$/;"	f
+main	main.c	/^int	main()$/;"	f
+minus	ft_printf_bonus.h	/^    int             minus;$/;"	m	struct:s_printf
+minus_left	bonus/flags_bonus.c	/^void    minus_left(t_printf *pf)$/;"	f
+nb_len	bonus/utils_bonus.c	/^int nb_len(int nb)$/;"	f
+p_arg	ft_printf_bonus.h	/^    void            *p_arg;$/;"	m	struct:s_printf
+plus	ft_printf_bonus.h	/^    int             plus;$/;"	m	struct:s_printf
+precision	ft_printf_bonus.h	/^    int             precision;$/;"	m	struct:s_printf
+put_arg	bonus/flags_bonus.c	/^void    put_arg(t_printf *pf)$/;"	f
+put_left_flags	bonus/flags_bonus.c	/^void    put_left_flags(t_printf *pf)$/;"	f
+put_right_flags	bonus/flags_bonus.c	/^void    put_right_flags(t_printf *pf)$/;"	f
+put_string_to_return	bonus/data_bonus.c	/^void    put_string_to_return(t_printf *pf)$/;"	f
+result	ft_printf_bonus.h	/^    char            *result;$/;"	m	struct:s_printf
+s_arg	ft_printf_bonus.h	/^    char            *s_arg;$/;"	m	struct:s_printf
+s_printf	ft_printf_bonus.h	/^typedef struct  s_printf$/;"	s
+space	ft_printf_bonus.h	/^    int             space;$/;"	m	struct:s_printf
+standard_justify	bonus/flags_bonus.c	/^void    standard_justify(t_printf *pf)$/;"	f
+string	ft_printf_bonus.h	/^    char            *string;$/;"	m	struct:s_printf
+t_printf	ft_printf_bonus.h	/^}               t_printf;$/;"	t	typeref:struct:s_printf
+u_arg	ft_printf_bonus.h	/^    unsigned int    u_arg;$/;"	m	struct:s_printf
+u_nb_len	bonus/utils_bonus.c	/^int u_nb_len(unsigned int nb)$/;"	f
+zero	ft_printf_bonus.h	/^    int             zero;$/;"	m	struct:s_printf

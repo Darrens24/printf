@@ -1,9 +1,14 @@
 #include "../ft_printf_bonus.h"
+#include <limits.h>
 
 int	main()
 {
-    printf("real:%04d\n", -14);
-    ft_printf("mine:%04d\n", -14);
+    //printf("%d\n", printf("real:%05d\n", -14));
+    //printf("%d\n", ft_printf("mine:%05d\n", -14));
+    //printf("real %d\n", printf("real: %.1s %.2s %.3s %.4s \n", " - ", "", "4", ""));
+    //printf("mine %d\n", ft_printf("mine: %.1s %.2s %.3s %.4s \n", " - ", "", "4", ""));
+	ft_printf("mine=% d\n", LONG_MIN);
+	//printf("real=% d\n", LONG_MIN);
 }
 
 /*

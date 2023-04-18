@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:01:01 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 13:01:10 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/17 15:02:29 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *param, ...);
-int		ft_putnbr_base_fd(long nbr, char *base, int fd);
+int		ft_putnbr_base_fd(int nbr, char *base, int fd);
 int		ft_sizebase_fd(size_t n, char *base, int fd);
 size_t	ft_strlen(const char *str);
 int		ft_intputchar_fd(char c, int fd);

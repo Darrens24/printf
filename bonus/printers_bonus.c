@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:07:40 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 15:49:15 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/04/17 16:33:47 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,23 @@ int iput_str(char *str)
 
 int iput_nbr(int nb)
 {
-	long	i;
+	int		i;
 	int		count;
 	char	tab[16];
 
 	if (nb == 0)
 		return (iput_char('0'));
+	if (nb == -2147483648)
+		return (iput_str("2147483648"));
 	count = 0;
     if (nb < 0)
-    {
-        count += iput_char('-');
-        nb = -nb;
-    }
+        nb *= -1;
 	i = 0;
     while (nb > 0)
     {
-        tab[i++] = nb % 10 + '0';
+        tab[i] = nb % 10 + '0';
         nb /= 10;
+		i++;
     }
     tab[i] = '\0';
     i--;
