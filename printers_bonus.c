@@ -6,13 +6,13 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:07:40 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/17 16:33:47 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/06/08 12:09:58 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf_bonus.h"
+#include "ft_printf.h"
 
-int iput_char(char c)
+int	iput_char(char c)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ int iput_char(char c)
 	return (i);
 }
 
-int iput_str(char *str)
+int	iput_str(char *str)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int iput_str(char *str)
 	return (i);
 }
 
-int iput_nbr(int nb)
+int	iput_nbr(int nb)
 {
 	int		i;
 	int		count;
@@ -44,46 +44,46 @@ int iput_nbr(int nb)
 	if (nb == -2147483648)
 		return (iput_str("2147483648"));
 	count = 0;
-    if (nb < 0)
-        nb *= -1;
+	if (nb < 0)
+		nb *= -1;
 	i = 0;
-    while (nb > 0)
-    {
-        tab[i] = nb % 10 + '0';
-        nb /= 10;
+	while (nb > 0)
+	{
+		tab[i] = nb % 10 + '0';
+		nb /= 10;
 		i++;
-    }
-    tab[i] = '\0';
-    i--;
-    while (i >= 0)
-        count += iput_char(tab[i--]);
-    return (count);
+	}
+	tab[i] = '\0';
+	i--;
+	while (i >= 0)
+		count += iput_char(tab[i--]);
+	return (count);
 }
 
-int iput_unsigned(unsigned int nb)
+int	iput_unsigned(unsigned int nb)
 {
-	unsigned int    i;
-	int		        count;
-	char	        tab[16];
+	unsigned int	i;
+	int				count;
+	char			tab[16];
 
 	if (nb == 0)
 		return (iput_char('0'));
 	count = 0;
 	i = 0;
-    while (nb > 0)
-    {
-        tab[i++] = nb % 10 + '0';
-        nb /= 10;
-    }
-    tab[i] = '\0';
-    i--;
-    while (i > 0)
-        count += iput_char(tab[i--]);
-    count += iput_char(tab[i]);
-    return (count);
+	while (nb > 0)
+	{
+		tab[i++] = nb % 10 + '0';
+		nb /= 10;
+	}
+	tab[i] = '\0';
+	i--;
+	while (i > 0)
+		count += iput_char(tab[i--]);
+	count += iput_char(tab[i]);
+	return (count);
 }
 
-int iput_hexa_base(size_t nb, char *base)
+int	iput_hexa_base(size_t nb, char *base)
 {
 	size_t	i;
 	char	tab[16];
@@ -93,15 +93,14 @@ int iput_hexa_base(size_t nb, char *base)
 		return (iput_char('0'));
 	count = 0;
 	i = 0;
-    while (nb > 0)
-    {
-        tab[i++] = base[nb % 16];
-        nb /= 16;
-    }
-    tab[i] = '\0';
-    i--;
-    while (i > 0)
-        count += iput_char(tab[i--]);
-    count += iput_char(tab[i]);
-    return (count);
+	while (nb > 0)
+	{
+		tab[i++] = base[nb % 16];
+		nb /= 16;
+	}
+	i--;
+	while (i > 0)
+		count += iput_char(tab[i--]);
+	count += iput_char(tab[i]);
+	return (count);
 }

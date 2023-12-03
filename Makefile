@@ -6,7 +6,7 @@
 #    By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 17:50:06 by eleleux           #+#    #+#              #
-#    Updated: 2023/04/12 13:19:06 by eleleux          ###   ########.fr        #
+#    Updated: 2023/06/08 12:14:56 by eleleux          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,16 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c \
-		  ft_putchar_fd.c \
-		  ft_putnbr_base_fd.c \
-		  ft_sizebase_fd.c \
-		  ft_putstr_fd.c \
-		  ft_strlen.c \
-
-SRCBONUS = ./bonus/data_bonus.c \
-			./bonus/flags_bonus.c \
-			./bonus/libft_bonus.c \
-			./bonus/parsing_bonus.c \
-			./bonus/printers_bonus.c \
-			./bonus/printf.c \
-			./bonus/utils_bonus.c \
-
+SRC = data_bonus.c \
+		flags_bonus.c \
+		libft_bonus.c \
+		parsing_bonus.c \
+		printers_bonus.c \
+		printf.c \
+		utils_bonus.c \
+		norm.c \
+		another_norm.c \
+		putarg.c \
 
 NAME = libftprintf.a
 
@@ -36,23 +31,16 @@ all : $(NAME)
 
 OBJ = $(SRC:.c=.o)
 
-OBJBONUS = $(SRCBONUS:.c=.o)
-
-ifdef MAKEBONUS
-	OBJ = $(OBJBONUS)
-endif
-
 .c.o :
 	$(CC) $(CFLAGS) -I ./ -c $< -o ${<:.c=.o}
 
 $(NAME) : $(OBJ)
 	ar rcs $@ $(OBJ)
 
-bonus :
-	@make MAKEBONUS=1 all
+bonus : re
 
 clean :
-	rm -f $(OBJ) $(OBJBONUS)
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)

@@ -6,20 +6,32 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:20:24 by eleleux           #+#    #+#             */
-/*   Updated: 2023/04/12 13:13:01 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/06/08 12:09:16 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf_bonus.h"
+#include "ft_printf.h"
 
-size_t  ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-    if (!str)
-        return (0);
-    i = 0;
-	while (str && str[i])
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_intstrlen(const char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str && str[i] && *str)
 		i++;
 	return (i);
 }
@@ -31,7 +43,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	minus;
@@ -54,4 +66,12 @@ int ft_atoi(const char *str)
 		i++;
 	}
 	return (res * minus);
+}
+
+int	go_to_next_arg(t_printf *pf, int i)
+{
+	while (pf->string[i] && (is_flag(pf->string[i])
+			|| ft_isdigit(pf->string[i])))
+		i++;
+	return (i);
 }
