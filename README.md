@@ -1,4 +1,7 @@
-![Badge Name](ft_printfm.png)
+<p align="center">
+    <img src="ft_printfm.png" alt="Badge Name">
+</p>
+
 
 ## Overview
 `ft_printf` is a 42 school project that aims to replicate the functionality of the C standard library function `printf`. This project serves as an exercise in handling variadic functions, parsing input strings, and formatting output in C. It demonstrates the ability to process various conversion specifiers and flags, closely mimicking the behavior of the original `printf`.
